@@ -1,0 +1,239 @@
+/* Mise en forme de la page en retirant toutes les marges internes et externes afin de pallier 
+aux divers comportements des différents navigateurs */
+
+body,
+html {
+    background: radial-gradient(circle at top, #8C86AA, darkgray, #7E3F8F);
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", "Helvetica", OpenSans-Serif;
+}
+
+header {
+    text-align: center;
+    background-color: #C8F4B9;
+    padding: 1vh 0;
+}
+
+header h1 {
+    color: darkgray;
+    font-size: 3em;
+}
+
+
+/* Positionnement des éléments à l'intérieur du container pour obtenir différents 
+compartiments */
+
+#container {
+    display: flex;
+    margin: 20px 0 20px 0;
+    align-items: flex-start;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+aside {
+    background-color: #C8F4B9;
+    border: #16302B 1px solid;
+    border-radius: 10px;
+    padding: 10px 0 10px 0;
+    margin: 0 10px;
+}
+
+aside:first-child {
+    margin-bottom: 20px;
+    min-width: 100px;
+}
+
+section {
+    margin: 0 auto;
+}
+
+article {
+    margin: auto;
+    background-color: #C8F4B9;
+    border: #16302B 1px solid;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+    margin-bottom: 20px;
+}
+
+article div {
+    display: flex;
+}
+
+article img {
+    height: 100%
+}
+
+article p {
+    background-color: #D5F6CB;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+nav ul li {
+    height: 60px;
+    background-color: #8C86AA;
+    border-radius: 10px;
+    margin: 1px;
+}
+
+a:hover {
+    background-color: #FFF !important;
+    color: #8C86AA !important;
+}
+
+#container aside nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 3.7;
+}
+
+#footer nav ul li {
+    width: 200px;
+}
+
+#footer nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 3.7;
+}
+
+aside:nth-child(1) nav ul li:nth-child(1) a {
+    border-radius: 10px 10px 0 0;
+}
+
+aside:nth-child(1) nav ul li:nth-child(5) a {
+    border-radius: 0 0 10px 10px;
+}
+
+.galerie {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.galerie img {
+    margin: 10px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #C8F4B9;
+    padding: 10px 0;
+}
+
+footer nav ul {
+    flex-direction: row;
+}
+
+@media screen and (max-width:1300px) {
+    article div {
+        flex-direction: column;
+    }
+}
+
+
+/* quelques requêtes pour modifier l'affichage dès lors que l'on atteint
+une largeur d'écran de 1024px */
+
+@media screen and (max-width:1024px) {
+    #container {
+        flex-direction: column;
+    }
+    header div>img {
+        display: none;
+    }
+    nav ul {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    aside:first-child {
+        align-self: center;
+        width: 50%;
+    }
+    #container>aside:nth-child(1)>nav>ul>li>a {
+        border-radius: 10px 10px 10px 10px;
+        line-height: 2.5;
+    }
+    #container>aside:nth-child(1)>nav>ul>li {
+        height: 40px;
+        width: 70px;
+    }
+    .galerie {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #container>aside:nth-child(1)>nav>ul {
+        justify-content: space-around;
+    }
+    #footer nav ul li {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width:525px) {
+    article {
+        width: 90%;
+        border: none;
+    }
+    article div img {
+        width: 100%;
+    }
+    aside:first-child {
+        width: 70%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    aside:last-child {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #container>aside:nth-child(3)>div>img {
+        width: 100%;
+    }
+    #container>section>article:nth-child(2)>div {
+        margin-bottom: 5px;
+    }
+    #container>section>article:nth-child(2)>div {
+        padding-bottom: 15px;
+    }
+    aside {
+        border: none;
+    }
+    #footer nav ul li {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:325px) {
+    article {
+        width: 100%;
+        margin: 0 0 20px 0;
+        padding: 0;
+    }
+}
